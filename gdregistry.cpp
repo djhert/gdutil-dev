@@ -1,4 +1,4 @@
-#include "GDRegistry.hpp"
+#include "gdregistry.hpp"
 
 namespace godot {
 

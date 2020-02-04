@@ -23,7 +23,7 @@ public:
 private:
 	// Follow the Singleton pattern
 	GDRegistry(){};
-	GDRegistry(const GDNRegistry &){};
+	GDRegistry(const GDRegistry &){};
 	~GDRegistry();
 
 	// static instances for the Singleton
