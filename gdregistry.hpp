@@ -4,6 +4,8 @@
 #include <Godot.hpp>
 #include <vector>
 
+#include "gdnativedef.hpp"
+
 namespace godot {
 
 class GDRegistry {

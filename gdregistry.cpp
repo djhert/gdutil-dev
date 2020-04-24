@@ -12,9 +12,9 @@ GDRegistry::~GDRegistry() {
 
 // instance() will return the static instance of the Registry
 GDRegistry *GDRegistry::instance() {
-	if (!_instance) {
+	if (!_instance)
 		_instance = new GDRegistry;
-	}
+
 	return _instance;
 }
 
@@ -26,10 +26,6 @@ void GDRegistry::Run() {
 		// Call each register_class(TYPE)
 		x();
 	}
-	// After it's run, we don't need this object anymore and really
-	// it shouldn't be called again.
-	// If it is, then the Register function will instance a new object
-	delete _instance;
 }
 
 } // namespace godot
