@@ -10,6 +10,10 @@ GDRegistry::~GDRegistry() {
 	_gens.clear();
 }
 
+bool GDRegistry::_regSort(const reg &a, const reg &b) {
+	return a.priority > b.priority;
+}
+
 // instance() will return the static instance of the Registry
 GDRegistry *GDRegistry::instance() {
 	if (!_instance)
@@ -22,10 +26,16 @@ GDRegistry *GDRegistry::instance() {
 void GDRegistry::Run() {
 	// Make sure that an instance exists
 	instance();
+	// Sort the _gens vector based on highest priority
+	std::sort(_instance->_gens.begin(), _instance->_gens.end(), _regSort);
 	for (auto &&x : _instance->_gens) {
-		// Call each register_class(TYPE)
-		x();
+		// Call each register_class<TYPE>
+		x.f();
 	}
+#ifndef _DEBUG
+	// IF in production, let's just delete our _instance as it is no longer needed
+	delete _instance;
+#endif
 }
 
 } // namespace godot
