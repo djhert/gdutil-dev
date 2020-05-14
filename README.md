@@ -84,3 +84,7 @@ GDREGISTERTOOL(classname, priority)
 `bool classname::_reg = godot::GDRegistry::RegisterTool<classname>();`
 
 **NOTE:** The above `GDREGISTER` Macros assume that the name of the static boolean registry variable is `_reg`.  Using  the above `GDCLASS` Macro, or any of the variants, defines this for you.
+
+### Versioning
+
+If `GDRegistry` is used in conjunction with **[gdnative-project](https://github.com/hlfstr/gdnative-project)**, it also exposes the versioning mechanism to your code.  See **[Versioning](https://github.com/hlfstr/gdnative-project#versioning)** for more information

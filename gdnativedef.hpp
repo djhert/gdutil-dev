@@ -1,6 +1,11 @@
 #ifndef _GDNATIVEDEF_H_
 #define _GDNATIVEDEF_H_
 
+#if __has_include(<version.hpp>)
+#define _VERSIONED
+#include <version.hpp>
+#endif
+
 namespace godot {
 
 #define GDCLASS(T, G)                \
