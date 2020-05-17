@@ -5,6 +5,7 @@ set (_VERSION_REVISION 0)
 
 ##=- Do not edit below this line -=##
 string (TOUPPER ${PROJECT_NAME} VER_NAME)
+string(REPLACE "-" "" VER_NAME ${VER_NAME})
 execute_process(COMMAND git rev-parse --short HEAD
 RESULT_VARIABLE _res_dump
 OUTPUT_VARIABLE _VERSION_TAG

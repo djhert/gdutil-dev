@@ -148,3 +148,29 @@ set_property(TARGET ${PROJECT_NAME} APPEND_STRING PROPERTY LINK_FLAGS ${L_FLAGS}
 
 # Include libgodot-cpp
 target_link_libraries(${PROJECT_NAME} godot-cpp)
+
+set(SourceDir ${PROJECT_SOURCE_DIR})
+get_filename_component(AddonDir ${CMAKE_CURRENT_SOURCE_DIR} DIRECTORY)
+set(AddonDir ${AddonDir}/addons)
+
+MACRO(SUBDIRLIST result curdir)
+  FILE(GLOB children RELATIVE ${curdir} ${curdir}/*)
+  SET(dirlist "")
+  FOREACH(child ${children})
+    IF(IS_DIRECTORY ${curdir}/${child})
+      LIST(APPEND dirlist ${child})
+    ENDIF()
+  ENDFOREACH()
+  SET(${result} ${dirlist})
+ENDMACRO()
+
+SUBDIRLIST(SUBDIRS ${AddonDir})
+
+FOREACH(subdir ${SUBDIRS})
+  set(binarydir ${PROJECT_BINARY_DIR}/${subdir})
+  set(subdir ${AddonDir}/${subdir})
+  IF(EXISTS ${subdir}/CMakeLists.txt)
+    ADD_SUBDIRECTORY(${subdir} ${binarydir})
+    message("Adding Module: " ${subdir})
+  ENDIF()
+ENDFOREACH()
