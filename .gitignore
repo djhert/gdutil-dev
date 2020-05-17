@@ -15,6 +15,7 @@ CMakeLists.txt.user
 source/build/
 out/*
 !out/.gdignore
-.vscode/
+.vscode/*
+!.vscode/settings.json
 .vs/
 setup.sh

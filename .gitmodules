@@ -5,3 +5,6 @@
 [submodule "source/src/gdregistry"]
 	path = source/src/gdregistry
 	url = https://github.com/hlfstr/gdregistry.git
+[submodule "addons/gdutil"]
+	path = addons/gdutil
+	url = https://github.com/hlfstr/gdutil.git
