@@ -3,7 +3,7 @@
 
 #include <gdregistry/gdregistry.hpp>
 
-#include "gdutil/gdutil.hpp"
+#include <gdutil.hpp>
 
 #include <AnimationPlayer.hpp>
 #include <CanvasLayer.hpp>

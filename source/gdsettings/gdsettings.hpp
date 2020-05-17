@@ -9,7 +9,7 @@
 #include <iostream>
 
 #include <gdregistry/gdregistry.hpp>
-#include <gdutil/gdutil.hpp>
+#include <gdutil.hpp>
 
 namespace godot {
 class GDSettings : public Node {
