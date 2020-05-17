@@ -1,5 +1,5 @@
-## CMake rules to build Godot Module
-#### To be used with gdnative-project
+#### DO not run against CMake directly!
+#### Meant to be used with gdnative-project as a "subproject"
 #### https://github.com/hlfstr/gdnative-project
 
 cmake_minimum_required(VERSION 3.15)
@@ -19,8 +19,8 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_RELEASE "${OUTPATH}")
 set(CMAKE_PDB_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}")
 
 # Find all source files in source dir
-file(GLOB_RECURSE LIBSOURCES ${PROJECT_SOURCE_DIR}/source/*.c**)
-file(GLOB_RECURSE LIBHEADERS ${PROJECT_SOURCE_DIR}/source/*.h**)
+file(GLOB_RECURSE LIBSOURCES ${PROJECT_SOURCE_DIR}/*.c**)
+file(GLOB_RECURSE LIBHEADERS ${PROJECT_SOURCE_DIR}/*.h**)
 
 # Define library
 add_library(${LibName} STATIC ${LIBSOURCES} ${LIBHEADERS})
@@ -38,8 +38,7 @@ endif()
 # Include godot-cpp and other needed stuff
 target_include_directories(${LibName}
   PUBLIC
-  ${PROJECT_SOURCE_DIR}/source
-  ${SourceDir}/include
+  ${PROJECT_SOURCE_DIR}
   ${SourceDir}/include/godot-cpp/include
   ${SourceDir}/include/godot-cpp/include/core
   ${SourceDir}/include/godot-cpp/include/gen
@@ -57,15 +56,13 @@ set_property(TARGET ${LibName} APPEND_STRING PROPERTY LINK_FLAGS ${L_FLAGS})
 
 # Include libgodot-cpp
 target_link_libraries(${LibName} godot-cpp)
-target_link_libraries(${LibName} gdregistry)
 
 # Add this to the main target
 target_include_directories(${ProjectId}
   PUBLIC
-  ${PROJECT_SOURCE_DIR}/source
+  ${PROJECT_SOURCE_DIR}
 )
 
 # Add this as a dependency of the main project
 add_dependencies(${ProjectId} ${LibName})
-
 target_link_libraries(${ProjectId} ${LibName})

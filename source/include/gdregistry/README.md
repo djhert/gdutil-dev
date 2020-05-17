@@ -2,9 +2,17 @@
 **...and other helpful GDNative stuff too!**
 
 ## Usage
-Include this project in your source tree for your GDNative project and compile it with your source.  This is not meant to be used as a stand-alone library; in order to work properly and as intended it must be compiled with **your** code.
+This project is meant to be used with the build setup here: **[gdnative-project](https://github.com/hlfstr/gdnative-project)**
 
-For an easy-to-use setup, see my other project which includes this as well as an example of organization: **[gdnative-project](https://github.com/hlfstr/gdnative-project)**
+The included CMake file inherits many properties from that setup, including the location of the `godot-cpp` bindings.  Please see that repository for a nice (in my opinion) setup for GDNative development.  The rest assumes you are using the above.
+
+Include this as a `git subtree` in your `source/include` folder.
+
+```sh
+$ git subtree add --prefix=source/include/gdregistry https://github.com/hlfstr/gdregistry master
+```
+
+From there, issue a build the standard way and GDRegistry will be built!
 
 ### How it works
 
