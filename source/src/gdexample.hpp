@@ -3,9 +3,6 @@
 
 #include <gdregistry/gdregistry.hpp>
 
-#include <gdutil.hpp>
-#include <scenemanager/scenemanager.hpp>
-
 #include <Godot.hpp>
 #include <Sprite.hpp>
 

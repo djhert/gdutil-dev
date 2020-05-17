@@ -22,7 +22,7 @@ config/icon="res://icon.png"
 [autoload]
 
 SceneManager="*res://scenes/SceneManager.tscn"
-gdisplay="*res://scenes/gdisplay.tscn"
+FPS="*res://addons/gdutil/scenes/FPS/FPS.tscn"
 
 [rendering]
 
