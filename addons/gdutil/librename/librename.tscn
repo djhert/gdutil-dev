@@ -1,0 +1,143 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/gdutil/librename/librename.gd" type="Script" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+_newLibPath = "lib/libgdutil-dev.gdnlib"
+
+[node name="Box" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+color = Color( 0, 0, 0, 0.501961 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="Box"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+custom_constants/separation = 16
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WhatIDo" type="Label" parent="Box/VBox"]
+margin_right = 960.0
+margin_bottom = 14.0
+text = "This will update all of the 'gdns' files in this addon to use your compiled library as this is a statically compiled module. "
+
+[node name="Using" type="Label" parent="Box/VBox"]
+margin_top = 30.0
+margin_right = 960.0
+margin_bottom = 44.0
+text = "Usage:  Set the relative path to the '.gdnlib' file you want to use as a property under the Control Node, and run just this scene (don't set it as default!)"
+
+[node name="Example" type="Label" parent="Box/VBox"]
+margin_top = 60.0
+margin_right = 960.0
+margin_bottom = 74.0
+text = "Example Input:   lib/libmylib.gdnlib       || Expands to: res://lib/libmylib.gdnlib"
+
+[node name="Warn" type="Label" parent="Box/VBox"]
+margin_top = 90.0
+margin_right = 960.0
+margin_bottom = 104.0
+text = "WARNING:  Make sure that you delete the \"librename\" folder in the addon for safety and sanity reasons once completed!!"
+
+[node name="Warn2" type="Label" parent="Box/VBox"]
+margin_top = 120.0
+margin_right = 960.0
+margin_bottom = 134.0
+text = "WARNING:  Make sure that you delete the \"librename\" folder in the addon for safety and sanity reasons once completed!!"
+
+[node name="Warn4" type="Label" parent="Box/VBox"]
+margin_top = 150.0
+margin_right = 960.0
+margin_bottom = 164.0
+text = "WARNING:  Make sure that you delete the \"librename\" folder in the addon for safety and sanity reasons once completed!!"
+
+[node name="Warn3" type="Label" parent="Box/VBox"]
+margin_top = 180.0
+margin_right = 960.0
+margin_bottom = 194.0
+text = "WARNING:  Make sure that you delete the \"librename\" folder in the addon for safety and sanity reasons once completed!!"
+
+[node name="Warn8" type="Label" parent="Box/VBox"]
+margin_top = 210.0
+margin_right = 960.0
+margin_bottom = 224.0
+text = "WARNING:  Make sure that you delete the \"librename\" folder in the addon for safety and sanity reasons once completed!!"
+
+[node name="Warn7" type="Label" parent="Box/VBox"]
+margin_top = 240.0
+margin_right = 960.0
+margin_bottom = 254.0
+text = "WARNING:  Make sure that you delete the \"librename\" folder in the addon for safety and sanity reasons once completed!!"
+
+[node name="Warn6" type="Label" parent="Box/VBox"]
+margin_top = 270.0
+margin_right = 960.0
+margin_bottom = 284.0
+text = "WARNING:  Make sure that you delete the \"librename\" folder in the addon for safety and sanity reasons once completed!!"
+
+[node name="Warn5" type="Label" parent="Box/VBox"]
+margin_top = 300.0
+margin_right = 960.0
+margin_bottom = 314.0
+text = "WARNING:  Make sure that you delete the \"librename\" folder in the addon for safety and sanity reasons once completed!!"
+
+[node name="Warn16" type="Label" parent="Box/VBox"]
+margin_top = 330.0
+margin_right = 960.0
+margin_bottom = 344.0
+text = "WARNING:  Make sure that you delete the \"librename\" folder in the addon for safety and sanity reasons once completed!!"
+
+[node name="Warn15" type="Label" parent="Box/VBox"]
+margin_top = 360.0
+margin_right = 960.0
+margin_bottom = 374.0
+text = "WARNING:  Make sure that you delete the \"librename\" folder in the addon for safety and sanity reasons once completed!!"
+
+[node name="Warn14" type="Label" parent="Box/VBox"]
+margin_top = 390.0
+margin_right = 960.0
+margin_bottom = 404.0
+text = "WARNING:  Make sure that you delete the \"librename\" folder in the addon for safety and sanity reasons once completed!!"
+
+[node name="Warn13" type="Label" parent="Box/VBox"]
+margin_top = 420.0
+margin_right = 960.0
+margin_bottom = 434.0
+text = "WARNING:  Make sure that you delete the \"librename\" folder in the addon for safety and sanity reasons once completed!!"
+
+[node name="Warn12" type="Label" parent="Box/VBox"]
+margin_top = 450.0
+margin_right = 960.0
+margin_bottom = 464.0
+text = "WARNING:  Make sure that you delete the \"librename\" folder in the addon for safety and sanity reasons once completed!!"
+
+[node name="Warn11" type="Label" parent="Box/VBox"]
+margin_top = 480.0
+margin_right = 960.0
+margin_bottom = 494.0
+text = "WARNING:  Make sure that you delete the \"librename\" folder in the addon for safety and sanity reasons once completed!!"
+
+[node name="Warn10" type="Label" parent="Box/VBox"]
+margin_top = 510.0
+margin_right = 960.0
+margin_bottom = 524.0
+text = "WARNING:  Make sure that you delete the \"librename\" folder in the addon for safety and sanity reasons once completed!!"

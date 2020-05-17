@@ -9,7 +9,7 @@ string(REPLACE " " "_" LibName ${LibName})
 project(${LibName} LANGUAGES CXX)
 
 # Set output directory
-set(OUTPATH "${PROJECT_SOURCE_DIR}/lib/${SYSTEM_NAME}")
+set(OUTPATH "${PROJECT_BINARY_DIR}/lib/${SYSTEM_NAME}")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${OUTPATH}")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG "${OUTPATH}")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE "${OUTPATH}")
@@ -23,7 +23,7 @@ file(GLOB_RECURSE LIBSOURCES ${PROJECT_SOURCE_DIR}/source/*.c**)
 file(GLOB_RECURSE LIBHEADERS ${PROJECT_SOURCE_DIR}/source/*.h**)
 
 # Define library
-add_library(${LibName} SHARED ${LIBSOURCES} ${LIBHEADERS})
+add_library(${LibName} STATIC ${LIBSOURCES} ${LIBHEADERS})
 add_dependencies(${LibName} libgodot-cpp)
 
 # Set target features
@@ -65,3 +65,5 @@ target_include_directories(${ProjectId}
 
 # Add this as a dependency of the main project
 add_dependencies(${ProjectId} ${LibName})
+
+target_link_libraries(${ProjectId} ${LibName})

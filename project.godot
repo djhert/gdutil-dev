@@ -19,6 +19,11 @@ config/name="gdutil-dev"
 run/main_scene="res://scenes/World.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+SceneManager="*res://scenes/SceneManager.tscn"
+gdisplay="*res://scenes/gdisplay.tscn"
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"

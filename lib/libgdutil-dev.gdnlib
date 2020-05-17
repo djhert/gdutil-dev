@@ -1,9 +1,12 @@
 [general]
+
 singleton=false
 load_once=true
 symbol_prefix="godot_"
 reloadable=true
+
 [entry]
+
 Android.armeabi-v7a="res://lib/android/libgdutil-dev.armeabi-v7a.so"
 Android.arm64-v8a="res://lib/android/libgdutil-dev.arm64-v8a.so"
 Android.x86="res://lib/android/libgdutil-dev.x86.so"
@@ -12,12 +15,14 @@ Windows.64="res://lib/windows/libgdutil-dev.64.dll"
 Windows.32="res://lib/windows/libgdutil-dev.32.dll"
 X11.64="res://lib/linux/libgdutil-dev.64.so"
 X11.32="res://lib/linux/libgdutil-dev.32.so"
+
 [dependencies]
+
 Android.armeabi-v7a=[  ]
 Android.arm64-v8a=[  ]
 Android.x86=[  ]
 Android.x86_64=[  ]
 Windows.64=[  ]
 Windows.32=[  ]
-X11.64=[  ]
+X11.64=[ "res://addons/gdutil/lib/linux/libgdutil.64.so" ]
 X11.32=[  ]
