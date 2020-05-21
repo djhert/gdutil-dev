@@ -32,7 +32,7 @@ void SceneManager::_register_methods() {
 	register_signal<SceneManager>("fade_out", "callback", GODOT_VARIANT_TYPE_INT);
 	register_signal<SceneManager>("load_start", "callback", GODOT_VARIANT_TYPE_INT);
 	register_signal<SceneManager>("load_end", "callback", GODOT_VARIANT_TYPE_INT);
-	register_signal<SceneManager>("quit");
+	register_signal<SceneManager>("quit", "callback", GODOT_VARIANT_TYPE_INT);
 }
 
 SceneManager *SceneManager::instance() {

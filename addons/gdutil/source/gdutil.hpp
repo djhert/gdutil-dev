@@ -1,6 +1,10 @@
 #ifndef _GDUTIL_H_
 #define _GDUTIL_H_
 
+#define _USE_MATH_DEFINES
+#include <cmath>
+#include <algorithm>
+
 #include <Godot.hpp>
 #include <Node.hpp>
 #include <NodePath.hpp>
