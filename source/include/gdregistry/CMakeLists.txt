@@ -1,4 +1,4 @@
-#### DO not run against CMake directly!
+#### Do not run against CMake directly!
 #### Meant to be used with gdnative-project as a "subproject"
 #### https://github.com/hlfstr/gdnative-project
 
