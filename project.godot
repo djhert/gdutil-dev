@@ -8,21 +8,29 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Reference",
+"class": "JSONBeautifier",
+"language": "GDScript",
+"path": "res://addons/json_beautifier/json_beautifier.gd"
+} ]
 _global_script_class_icons={
-
+"JSONBeautifier": ""
 }
 
 [application]
 
 config/name="gdutil-dev"
-run/main_scene="res://scenes/World.tscn"
+run/main_scene="res://scenes/MainMenu.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="gdutil-dev"
 config/icon="res://icon.png"
 
 [autoload]
 
 SceneManager="*res://scenes/SceneManager.tscn"
 FPS="*res://addons/gdutil/scenes/FPS/FPS.tscn"
+GSettings="*res://scenes/GSettings.tscn"
 
 [rendering]
 

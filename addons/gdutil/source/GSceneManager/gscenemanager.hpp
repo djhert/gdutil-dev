@@ -1,5 +1,5 @@
-#ifndef _GDSCENEMANAGER_H_
-#define _GDSCENEMANAGER_H_
+#ifndef _GSCENEMANAGER_H_
+#define _GSCENEMANAGER_H_
 
 #include <gdregistry/gdregistry.hpp>
 
@@ -14,8 +14,8 @@
 
 namespace godot {
 
-class SceneManager : public CanvasLayer {
-	GDCLASS(SceneManager, CanvasLayer);
+class GSceneManager : public CanvasLayer {
+	GDCLASS(GSceneManager, CanvasLayer);
 
 	// Class
 public:
@@ -28,7 +28,7 @@ public:
 	void _lateReady();
 
 	// Statics
-	static SceneManager *instance();
+	static GSceneManager *instance();
 	static void Quit();
 	static void FadeIn(const String &name, const real_t &speed, const int &callback = 0);
 	static void FadeOut(const String &name, const real_t &speed, const int &callback = 0);
@@ -72,7 +72,7 @@ protected:
 	void _change(const PackedScene *res);
 
 private:
-	static SceneManager *_instance;
+	static GSceneManager *_instance;
 };
 
 } // namespace godot

@@ -52,7 +52,7 @@ IF("${CMAKE_CXX_COMPILER_ID}" MATCHES "MSVC")
   ELSE()
     SET(C_FLAGS "${C_FLAGS} /MDd /D_DEBUG")
   ENDIF()
-ELSEIF("${CMAKE_CXX_COMPILER_ID}" MATCHES "(GNU|Clang)")
+ELSE()
   SET(C_FLAGS "${C_FLAGS} -fPIC -Wwrite-strings")
   IF("${CMAKE_BUILD_TYPE}" MATCHES Release)
     SET(C_FLAGS "${C_FLAGS} -O3 -DNDEBUG")
@@ -88,7 +88,7 @@ TARGET_INCLUDE_DIRECTORIES(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src
 )
 
-# Include godot_headers and ignore any warnings
+# Include godot_headers
 TARGET_INCLUDE_DIRECTORIES(${PROJECT_NAME}
   SYSTEM PUBLIC ${PROJECT_SOURCE_DIR}/include/godot-cpp/godot_headers
 )
@@ -98,8 +98,8 @@ SET_PROPERTY(TARGET ${PROJECT_NAME} APPEND_STRING PROPERTY COMPILE_FLAGS ${C_FLA
 SET_PROPERTY(TARGET ${PROJECT_NAME} APPEND_STRING PROPERTY LINK_FLAGS ${L_FLAGS})
 
 # Include godot-cpp
+MESSAGE(STATUS "Include: " godot-cpp)
 ADD_SUBDIRECTORY(${PROJECT_SOURCE_DIR}/include/godot-cpp ${PROJECT_BINARY_DIR}/godot-cpp)
-MESSAGE("-- Include: " godot-cpp)
 # Since we should have found godot-cpp, include the project now
 ADD_DEPENDENCIES(${PROJECT_NAME} godot-cpp)
 # Include libgodot-cpp
@@ -129,8 +129,8 @@ FOREACH(subdir ${subdirs})
   SET(binarydir ${PROJECT_BINARY_DIR}/${subdir})
   SET(fullsubdir ${PROJECT_SOURCE_DIR}/include/${subdir})
   IF(EXISTS ${fullsubdir}/CMakeLists.txt)
-    ADD_SUBDIRECTORY(${fullsubdir} ${binarydir})
     MESSAGE(STATUS "Include: " ${subdir})
+    ADD_SUBDIRECTORY(${fullsubdir} ${binarydir})
   ENDIF()
 ENDFOREACH()
 
@@ -142,18 +142,18 @@ FOREACH(subdir ${subdirs})
   SET(binarydir ${PROJECT_BINARY_DIR}/${subdir})
   SET(fullsubdir ${AddonDir}/${subdir}/source)
   IF(EXISTS ${fullsubdir}/CMakeLists.txt)
-    ADD_SUBDIRECTORY(${fullsubdir} ${binarydir})
     MESSAGE(STATUS "Module: " ${subdir})
+    ADD_SUBDIRECTORY(${fullsubdir} ${binarydir})
   ENDIF()
 ENDFOREACH()
 
 # Now that everything is setup, let's finalize versioning
-MACRO(CAT OUT IN)
+MACRO(cat OUT IN)
   FILE(READ ${IN} CONTENTS)
   FILE(APPEND ${OUT} "${CONTENTS}")
 ENDMACRO()
 
 FILE(GLOB VERS ${VERSIONS_DIR}/version-*.hpp)
 FOREACH(ver ${VERS})
-  CAT(${VERSIONS_DIR}/version.hpp ${ver})
+  cat(${VERSIONS_DIR}/version.hpp ${ver})
 ENDFOREACH()

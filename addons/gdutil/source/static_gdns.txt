@@ -1,0 +1,13 @@
+##=- Do not edit below this line -=##
+## Builds the gdns files needed for this addon ##
+SET(GDNSOUT "${PROJECT_SOURCE_DIR}/../gdns/")
+SET(PROJLIB "lib${ProjectId}.gdnlib")
+SET(CLASSNAME )
+SUBDIRS(subdirs ${PROJECT_SOURCE_DIR})
+FOREACH(subdir ${subdirs})
+    SET(CLASSNAME ${subdir})
+    CONFIGURE_FILE (
+        "${PROJECT_SOURCE_DIR}/gdns.in"
+        "${GDNSOUT}/${CLASSNAME}.gdns"
+    )
+ENDFOREACH()

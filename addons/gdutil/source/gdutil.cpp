@@ -20,4 +20,13 @@ real_t clamp(const real_t &n, const real_t &l, const real_t &h) {
 real_t deg2rad(const real_t &v) {
 	return real_t((v * M_PI) / 180.0f);
 }
+
+void Reparent(Node *node, Node *newparent) {
+	Node *old = node->get_parent();
+	old->remove_child(node);
+	newparent->add_child(node);
+	node->set_owner(newparent);
+	old = nullptr;
+	delete old;
+}
 } // namespace godot

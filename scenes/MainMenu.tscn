@@ -1,0 +1,141 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/ui/panel.png" type="Texture" id=1]
+[ext_resource path="res://assets/fonts/Questrial_72.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/fonts/Questrial_32.tres" type="DynamicFont" id=3]
+[ext_resource path="res://scripts/MainMenu.gd" type="Script" id=4]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 32.0
+margin_top = 32.0
+margin_right = -32.0
+margin_bottom = -32.0
+texture = ExtResource( 1 )
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Options" type="VBoxContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 32.0
+margin_top = 32.0
+margin_right = -32.0
+margin_bottom = -32.0
+custom_constants/separation = 32
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel/Options"]
+margin_right = 896.0
+margin_bottom = 76.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 2 )
+text = "GDUtil Showcase"
+align = 1
+valign = 1
+
+[node name="GridContainer" type="GridContainer" parent="Panel/Options"]
+margin_top = 108.0
+margin_right = 896.0
+margin_bottom = 472.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/vseparation = 16
+custom_constants/hseparation = 16
+columns = 2
+
+[node name="GfpsCam" type="Button" parent="Panel/Options/GridContainer"]
+margin_right = 440.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "GfpsCam"
+
+[node name="GDExample" type="Button" parent="Panel/Options/GridContainer"]
+margin_left = 456.0
+margin_right = 896.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "GDExample"
+
+[node name="GSettings" type="Button" parent="Panel/Options/GridContainer"]
+margin_top = 56.0
+margin_right = 440.0
+margin_bottom = 96.0
+custom_fonts/font = ExtResource( 3 )
+text = "GSettings"
+
+[node name="Spacer" type="Control" parent="Panel/Options/GridContainer"]
+margin_left = 456.0
+margin_top = 56.0
+margin_right = 896.0
+margin_bottom = 96.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GSceneManager" type="Label" parent="Panel/Options/GridContainer"]
+margin_top = 112.0
+margin_right = 440.0
+margin_bottom = 308.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 3 )
+text = "This project is controlled
+via GSceneManager"
+align = 1
+valign = 1
+
+[node name="GDisplay" type="Label" parent="Panel/Options/GridContainer"]
+margin_left = 456.0
+margin_top = 112.0
+margin_right = 896.0
+margin_bottom = 308.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 3 )
+text = "GDisplay is the FPS Counter
+in the top right"
+align = 1
+valign = 1
+
+[node name="Spacer2" type="Control" parent="Panel/Options/GridContainer"]
+margin_top = 324.0
+margin_right = 440.0
+margin_bottom = 364.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="Button" parent="Panel/Options/GridContainer"]
+margin_left = 456.0
+margin_top = 324.0
+margin_right = 896.0
+margin_bottom = 364.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "Quit"
+
+[connection signal="pressed" from="Panel/Options/GridContainer/GfpsCam" to="." method="_onButton" binds= [ 1 ]]
+[connection signal="pressed" from="Panel/Options/GridContainer/GDExample" to="." method="_onButton" binds= [ 3 ]]
+[connection signal="pressed" from="Panel/Options/GridContainer/GSettings" to="." method="_onButton" binds= [ 2 ]]
+[connection signal="pressed" from="Panel/Options/GridContainer/Quit" to="." method="_onButton" binds= [ 0 ]]

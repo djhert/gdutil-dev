@@ -1,0 +1,344 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/ui/panel.png" type="Texture" id=1]
+[ext_resource path="res://assets/fonts/Questrial_32.tres" type="DynamicFont" id=2]
+[ext_resource path="res://scripts/GSettingsButton.gd" type="Script" id=3]
+[ext_resource path="res://scripts/GSettingsScene.gd" type="Script" id=4]
+[ext_resource path="res://assets/fonts/Questrial_16.tres" type="DynamicFont" id=5]
+
+[node name="GSettings" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 32.0
+margin_top = 32.0
+margin_right = -32.0
+margin_bottom = -32.0
+texture = ExtResource( 1 )
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hbox" type="HBoxContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 32.0
+margin_top = 32.0
+margin_right = -32.0
+margin_bottom = -32.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel/Hbox"]
+margin_right = 446.0
+margin_bottom = 472.0
+size_flags_horizontal = 3
+size_flags_vertical = 5
+custom_fonts/font = ExtResource( 5 )
+text = "Current Settings:
+"
+valign = 1
+autowrap = true
+
+[node name="Vbox" type="VBoxContainer" parent="Panel/Hbox"]
+margin_left = 450.0
+margin_right = 896.0
+margin_bottom = 472.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButton" type="MenuButton" parent="Panel/Hbox/Vbox"]
+margin_right = 446.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 2 )
+text = "Keyboard Profiles"
+flat = false
+
+[node name="GridContainer" type="GridContainer" parent="Panel/Hbox/Vbox"]
+margin_top = 48.0
+margin_right = 446.0
+margin_bottom = 472.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/vseparation = 8
+custom_constants/hseparation = 8
+columns = 2
+
+[node name="Forward" type="Button" parent="Panel/Hbox/Vbox/GridContainer" groups=[
+"SettingsButtons",
+]]
+margin_right = 219.0
+margin_bottom = 78.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="Panel/Hbox/Vbox/GridContainer/Forward"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 2 )
+text = "Forward
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="Panel/Hbox/Vbox/GridContainer" groups=[
+"SettingsButtons",
+]]
+margin_left = 227.0
+margin_right = 446.0
+margin_bottom = 78.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="Panel/Hbox/Vbox/GridContainer/Back"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 2 )
+text = "Back
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Left" type="Button" parent="Panel/Hbox/Vbox/GridContainer" groups=[
+"SettingsButtons",
+]]
+margin_top = 86.0
+margin_right = 219.0
+margin_bottom = 164.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="Panel/Hbox/Vbox/GridContainer/Left"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 2 )
+text = "Left
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Right" type="Button" parent="Panel/Hbox/Vbox/GridContainer" groups=[
+"SettingsButtons",
+]]
+margin_left = 227.0
+margin_top = 86.0
+margin_right = 446.0
+margin_bottom = 164.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="Panel/Hbox/Vbox/GridContainer/Right"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 2 )
+text = "Right
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Up" type="Button" parent="Panel/Hbox/Vbox/GridContainer" groups=[
+"SettingsButtons",
+]]
+margin_top = 172.0
+margin_right = 219.0
+margin_bottom = 250.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="Panel/Hbox/Vbox/GridContainer/Up"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 2 )
+text = "Up
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Down" type="Button" parent="Panel/Hbox/Vbox/GridContainer" groups=[
+"SettingsButtons",
+]]
+margin_left = 227.0
+margin_top = 172.0
+margin_right = 446.0
+margin_bottom = 250.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="Panel/Hbox/Vbox/GridContainer/Down"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 2 )
+text = "Down
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Collision" type="Button" parent="Panel/Hbox/Vbox/GridContainer" groups=[
+"SettingsButtons",
+]]
+margin_top = 258.0
+margin_right = 219.0
+margin_bottom = 336.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="Panel/Hbox/Vbox/GridContainer/Collision"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 2 )
+text = "Collision
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Escape" type="Button" parent="Panel/Hbox/Vbox/GridContainer" groups=[
+"SettingsButtons",
+]]
+margin_left = 227.0
+margin_top = 258.0
+margin_right = 446.0
+margin_bottom = 336.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="Panel/Hbox/Vbox/GridContainer/Escape"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 2 )
+text = "Escape
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Save" type="Button" parent="Panel/Hbox/Vbox/GridContainer"]
+margin_top = 344.0
+margin_right = 219.0
+margin_bottom = 422.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="Panel/Hbox/Vbox/GridContainer/Save"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 2 )
+text = "Save"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Load" type="Button" parent="Panel/Hbox/Vbox/GridContainer"]
+margin_left = 227.0
+margin_top = 344.0
+margin_right = 446.0
+margin_bottom = 422.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="Panel/Hbox/Vbox/GridContainer/Load"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 2 )
+text = "Load"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InputPanel" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -1.18921
+margin_bottom = -1.18921
+color = Color( 0, 0, 0, 0.501961 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="InputPanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -180.0
+margin_top = -64.0
+margin_right = 180.0
+margin_bottom = 64.0
+texture = ExtResource( 1 )
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="InputPanel/NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 5 )
+text = "Press a key to set"
+align = 1
+valign = 1
+
+[connection signal="pressed" from="Panel/Hbox/Vbox/GridContainer/Save" to="." method="_onSL" binds= [ true ]]
+[connection signal="pressed" from="Panel/Hbox/Vbox/GridContainer/Load" to="." method="_onSL" binds= [ false ]]

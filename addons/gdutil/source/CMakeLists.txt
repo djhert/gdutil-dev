@@ -12,8 +12,11 @@ PROJECT(${LibName} LANGUAGES CXX)
 # include the version.txt
 INCLUDE(${PROJECT_SOURCE_DIR}/version.txt OPTIONAL)
 
+# include the static_gdns.txt
+INCLUDE(${PROJECT_SOURCE_DIR}/static_gdns.txt OPTIONAL)
+
 ## Needed to link everything?
-set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS TRUE)
+SET(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS TRUE)
 
 # Set output directory
 SET(OUTPATH "${PROJECT_BINARY_DIR}/lib/${SYSTEM_NAME}")
@@ -79,6 +82,6 @@ ADD_DEPENDENCIES(${ProjectId} ${LibName})
 IF ("${CMAKE_CXX_COMPILER_ID}" MATCHES "MSVC")
   TARGET_LINK_LIBRARIES(${ProjectId} ${LibName})
   SET_PROPERTY(TARGET ${ProjectId} APPEND_STRING PROPERTY LINK_FLAGS " /WHOLEARCHIVE:lib${LibName}.${BITS}.lib")
-ELSEIF("${CMAKE_CXX_COMPILER_ID}" MATCHES "(GNU|Clang)")
+ELSE()
   TARGET_LINK_LIBRARIES(${ProjectId} -Wl,--whole-archive ${LibName} -Wl,--no-whole-archive)
 ENDIF()

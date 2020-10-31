@@ -2,8 +2,8 @@
 #define _GDUTIL_H_
 
 #define _USE_MATH_DEFINES
-#include <cmath>
 #include <algorithm>
+#include <cmath>
 
 #include <Godot.hpp>
 #include <Node.hpp>
@@ -26,6 +26,8 @@ static T *GetNodeFrom(const Node *from, const String &name) {
 	return Node::cast_to<T>(from->get_node_or_null(path));
 }
 
+/* deep_copy is a helper function to perform a deep copy on a Dictionary or Array
+*/
 template <class T>
 static T deep_copy(const Variant &var) {
 	Variant out;
@@ -70,17 +72,25 @@ real_t clamp(const real_t &n, const real_t &l, const real_t &h);
 */
 real_t deg2rad(const real_t &v);
 
-/* ZERO2 is a const Vector2(0,0)
-UP2 is a const Vector2(0,1)
+void Reparent(Node *node, Node *newparent);
+
+/* ZERO2 is a const at 0
+UP2 is a const pointing up
+RIGHT2 is a const pointing right
 */
 const Vector2 ZERO2 = Vector2(0, 0);
 const Vector2 UP2 = Vector2(0, 1);
+const Vector2 RIGHT2 = Vector2(1, 0);
 
-/* ZERO3 is a const Vector3(0,0,0)
-UP3 is a const Vector3(0,1,0)
+/* ZERO3 is a const at 0
+RIGHT3 is a const pointing right
+UP3 is a const pointing up
+FORWARD3 is a const pointing right
 */
 const Vector3 ZERO3 = Vector3(0, 0, 0);
+const Vector3 RIGHT3 = Vector3(1, 0, 0);
 const Vector3 UP3 = Vector3(0, 1, 0);
+const Vector3 FORWARD3 = Vector3(0, 0, 1);
 
 } // namespace godot
 
