@@ -16,6 +16,5 @@ source/build/
 out/*
 !out/.gdignore
 .vscode/*
-!.vscode/settings.json
 .vs/
 setup.sh
